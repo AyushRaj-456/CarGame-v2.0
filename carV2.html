@@ -1,0 +1,560 @@
+<!--
+ 
+_________________☆_______________
+
+Creation date : 18/5/2021
+
+____________________________________
+
+-->
+
+
+
+<!DOCTYPE html >
+<html> 
+<head>
+<title>Car Racer v2.0.1</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+<!-- <link rel="stylesheet" href="next2.css"> --> 
+
+<style>
+        
+
+
+body {
+padding:0px;
+margin:0px;
+background-image:url("https://3.bp.blogspot.com/-sBe9-hyLTNg/Vkzoi9hLp8I/AAAAAAAAIfI/kB6tQjz9P_E/s1600/Grass%2Bchoppy%2Bgreen%2Bseamless%2Btexture.jpg");
+background-clip:url("https://ak.picdn.net/shutterstock/videos/1031933024/preview/stock-footage-aerial-top-down-k-view-of-white-car-driving-on-country-road-in-forest-in-the-evening-at-twilight.webm");
+
+
+}
+
+#game{
+margin:auto;
+height:500px;
+width:220px;
+background-color: black;
+overflow:hidden ;
+border:8px solid green;
+border-bottom-color:green;
+box-sizing:border-box ;
+
+}
+
+
+
+#charector{
+
+width:50px;
+height:50px;
+background-color:red;
+position:relative ;
+top:234px;
+left:100px;
+bottom: 10px;
+border-radius: 5px;
+
+}
+
+/*styling car */
+
+#fglass{
+
+width: 30px;
+height: 15px;
+background-color:grey ;
+position: relative;
+top: 5px;
+left: 10px;
+}
+
+#bglass{
+
+width: 30px;
+height: 15px;
+background-color:grey ;
+position: relative;
+top: -13px;
+left: 10px;
+
+}
+
+#flightL{
+
+width: 4px;
+height:5px;
+background-color: white;
+position: relative;
+left: 11px;
+bottom: 16px;
+border-radius: 10%;
+
+}
+
+#flightR{
+
+width: 4px;
+height: 5px;
+background-color: white;
+position: relative;
+left: 33px;
+bottom: 21px;
+border-radius: 10%;
+
+
+}
+
+#ftyreL{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 20px;
+right: 3px;
+
+border-radius: 20%;
+}
+
+#ftyreR{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 27px;
+right: 3px;
+left:48px;
+border-radius: 20%;
+}
+
+#btyreL{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 33px;
+right: 2px;
+border-radius: 20%;
+}
+
+#btyreR{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 40px;
+left: 48px;
+border-radius: 20%;
+}
+
+
+#blightL{
+
+width: 4px;
+height: 4px;
+background-color: white;
+position: relative;
+top: -8px;
+left: 11px;
+border-radius: 10%;
+
+}
+
+#blightR{
+
+width: 4px;
+height: 4px;
+background-color:white;
+position: relative;
+left: 36px;
+top: -12px;
+border-radius: 15%;
+
+
+}
+
+/* own car styling complete*/
+
+#block{
+
+width:50px;
+height:50px;
+top:-100px;
+background-color:skyblue;
+border-radius:5px ;
+position:relative ;
+animation:slide 1s infinite linear ;
+
+} 
+
+
+
+
+@keyframes slide{
+
+0%{top:-100px;}
+50%{top:150px;} 
+100%{top:400px;}
+
+
+}
+
+/* opponent car styling*/
+
+
+#fglass1{
+
+width: 30px;
+height: 15px;
+background-color:grey ;
+position: relative;
+top: 7px;
+left: 10px;
+}
+
+#bglass1{
+
+width: 30px;
+height: 15px;
+background-color:grey ;
+position: relative;
+top: -13px;
+left: 10px;
+
+}
+
+#flightL1{
+
+width: 4px;
+height: 5px;
+background-color: white;
+position: relative;
+left: 11px;
+bottom: 15px;
+border-radius: 10%;
+
+}
+
+#flightR1{
+
+width: 4px;
+height: 5px;
+background-color: white;
+position: relative;
+left: 33px;
+bottom: 20px;
+border-radius: 10%;
+
+
+}
+
+#ftyreL1{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 20px;
+right: 3px;
+
+border-radius: 20%;
+}
+
+#ftyreR1{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 27px;
+right: 3px;
+left:48px;
+border-radius: 20%;
+}
+
+#btyreL1{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 23px;
+right: 2px;
+border-radius: 20%;
+}
+
+#btyreR1{
+
+width: 5px;
+height: 7px;
+background-color: grey;
+position: relative;
+bottom: 30px;
+left: 48px;
+border-radius: 20%;
+}
+
+
+#blightL1{
+
+width: 4px;
+height: 5px;
+background-color: white;
+position: relative;
+top: -9px;
+left: 11px;
+border-radius: 10%;
+
+}
+
+#blightR1{
+
+width: 4px;
+height: 5px;
+background-color:white;
+position: relative;
+left: 36px;
+top: -14px;
+border-radius: 15%;
+
+
+} 
+
+/* opponent car styling finish */
+
+
+
+#white{
+
+height:55px;
+width:220px;
+background-color:white;
+
+bottom:137px;
+left:-6px;
+position: relative ; 
+z-index: 100000;
+} 
+
+#left, #right{
+
+width:50%;
+position:absolute;
+height:750px;
+
+
+}
+
+#right{
+
+left: 50%;
+
+}
+
+
+#h{
+
+color:red;
+position:relative ;
+top:-360px;
+font-family:cursive;
+font-style: italic;
+text-shadow: 2px 2px 3px red;
+text-align: center;
+font-size: 33px;
+}
+
+
+
+#foot{
+margin-top:399px;
+font-size: 15px;
+text-align:center;
+background-color:green;
+color:crimson;
+ font-family: 'Roboto Condensed', sans-serif;
+text-shadow: 1px 1px 2px black;
+}
+
+#move{
+
+color:crimson;
+display:block ;
+ font-family: 'Roboto Condensed', sans-serif;
+text-shadow: 1px 1px 2px black;
+font-style: italic;
+margin-left: 25px;
+height:30px;
+font-size: 15px;
+}
+
+
+
+
+
+
+#a{
+
+width: 6px;
+height: 100px;
+background-color: white;
+position:relative ;
+margin-left: 50%;
+animation:ayy 700ms infinite linear;
+}
+
+@keyframes ayy{
+
+0%{top:-10px;}
+50%{top:250px;} 
+100%{top:500px;}
+
+
+}
+
+
+/*
+
+#b{
+
+width: 6px;
+height: 50px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+}
+
+
+#c{
+
+width: 6px;
+height: 50px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+}
+
+
+#d{
+
+width: 6px;
+height: 50px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+}
+
+
+#e{
+
+width: 6px;
+height: 50px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+}
+
+#f{
+
+width: 6px;
+height: 50px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+}
+
+#g{
+
+width: 6px;
+
+height: 47px;
+background-color: white;
+margin-left: 50%;
+margin-top: 15px;
+
+}
+
+*/
+    
+</style>
+
+
+</head>
+<body>
+<div id="left"></div>
+<div id="right"></div>
+
+
+<div id="game">
+<div id="a"></div>
+<div id="block">
+
+
+<div id="fglass1"></div>
+<div id="flightL1"></div>
+<div id="flightR1"></div>
+<div id="ftyreL1"></div>
+<div id="ftyreR1"></div>
+<div id="bglass1"></div>
+<div id="blightL1"></div>
+<div id="blightR1"></div>
+<div id="btyreL1"></div>
+<div id="btyreR1"></div> 
+
+
+</div>
+
+
+
+
+<!--
+<div id="b"></div>
+<div id="c"></div>
+<div id="d"></div>
+<div id="e"></div>
+<div id="f"></div>
+<div id="g"></div> 
+
+-->
+
+<div id="charector"> 
+
+<div id="fglass"></div>
+<div id="flightL"></div>
+<div id="flightR"></div>
+<div id="ftyreL"></div>
+<div id="ftyreR"></div>
+<div id="bglass"></div>
+<div id="blightL"></div>
+<div id="blightR"></div>
+<div id="btyreL"></div>
+<div id="btyreR"></div>
+
+</div>
+
+<div id="lastoo">Car Racer v2.0.1</div>
+
+
+
+<div id="white">
+<footer id="foot"> © 2021 AyushRaj
+</footer> 
+ </div>
+
+
+
+<script src="script.js">
+</script> 
+
+</body>
+</html>
